@@ -141,15 +141,7 @@ def toon_with_stats(data: Any) -> str:
 # ================================================================
 # MCP SERVER DEFINITION
 # ================================================================
-mcp = FastMCP(
-    name="toon-json-mcp",
-    version="0.1.0",
-    description=(
-        "Intercepts JSON-like data and converts it to TOON format with "
-        "token savings stats, so you can send compact TOON into Gemini."
-    ),
-)
-
+mcp = FastMCP("Gemini-CLI JSON to TOON Converter")
 
 @mcp.tool()
 def to_toon(data: Any) -> str:
