@@ -9,13 +9,5 @@
     }
   },
   "contextFileName": "GEMINI.md",
-  "commands": [
-    {
-      "path": "commands/toon/to_toon.TOML"
-    },
-    {
-      "path": "commands/toon/to_toon_from_string.TOML"
-    }
-  ],
   "excludeTools": []
 }

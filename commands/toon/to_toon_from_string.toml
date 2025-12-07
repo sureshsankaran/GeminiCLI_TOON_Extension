@@ -1,11 +1,11 @@
 name = "/toon:string"
-description = "Convert a raw JSON string to TOON format with token savings using the toon-json-mcp.to_toon_from_string tool."
+description = "Convert a raw JSON string to TOON format with token savings using the TOON.to_toon_from_string tool."
 
 prompt = """
 You are the TOON compression extension for Gemini-CLI.
 
 Goal:
-- When the user runs /toon:string, you MUST call the MCP server `toon-json-mcp`
+- When the user runs /toon:string, you MUST call the MCP server `TOON`
   and its tool `to_toon_from_string` with the provided `json_text` argument.
 - The tool will:
   - Parse the JSON string
@@ -24,7 +24,7 @@ Required behavior:
   so the user can see the token reduction.
 
 Tool call:
-- Call MCP server: `toon-json-mcp`
+- Call MCP server: `TOON`
 - Tool name: `to_toon_from_string`
 - Arguments:
   - json_text = {{json_text}}
