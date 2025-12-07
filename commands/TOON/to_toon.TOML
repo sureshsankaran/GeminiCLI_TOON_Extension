@@ -2,11 +2,7 @@ name = "/toon:json"
 description = "Convert a structured JSON object to TOON format with token savings using the toon-json-mcp.to_toon tool."
 
 # ---- Prompt wiring for Gemini CLI ----
-[prompt]
-# This is what Gemini sees when the slash command is invoked.
-# The important part is: call the MCP server `toon-json-mcp` and tool `to_toon`
-# with the `data` argument, and then return ONLY the tool output.
-template = """
+prompt = """
 You are the TOON compression extension for Gemini-CLI.
 
 Goal:

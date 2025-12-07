@@ -1,8 +1,7 @@
 name = "/toon:string"
 description = "Convert a raw JSON string to TOON format with token savings using the toon-json-mcp.to_toon_from_string tool."
 
-[prompt]
-template = """
+prompt = """
 You are the TOON compression extension for Gemini-CLI.
 
 Goal:
