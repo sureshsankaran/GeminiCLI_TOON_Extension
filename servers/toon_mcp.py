@@ -6,7 +6,10 @@ import tempfile
 from typing import Any
 
 import tiktoken
-from fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP
+except Exception:
+    from fastmcp import FastMCP  # type: ignore
 
 # ================================================================
 # LOGGING
@@ -138,7 +141,7 @@ def toon_with_stats(data: Any) -> str:
 # ================================================================
 # MCP SERVER DEFINITION
 # ================================================================
-app = FastMCP(
+mcp = FastMCP(
     name="toon-json-mcp",
     version="0.1.0",
     description=(
@@ -148,7 +151,7 @@ app = FastMCP(
 )
 
 
-@tool
+@mcp.tool()
 def to_toon(data: Any) -> str:
     """
     Convert an arbitrary JSON-like object (dict/list/etc.) into TOON text,
@@ -159,7 +162,7 @@ def to_toon(data: Any) -> str:
     return toon_with_stats(data)
 
 
-@tool
+@mcp.tool()
 def to_toon_from_string(json_text: str) -> str:
     """
     Parse a JSON string and convert it into TOON with token savings.
@@ -175,4 +178,4 @@ def to_toon_from_string(json_text: str) -> str:
 if __name__ == "__main__":
     # FastMCP will default to stdio mode if run with no arguments,
     # which is what MCP clients (like Gemini CLI) expect.
-    app.run()
+    mcp.run()
